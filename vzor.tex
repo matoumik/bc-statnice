@@ -1,22 +1,47 @@
-\section{Vzorová otázka} %Název podotázky, přesně tak, jak se to má vytexat
+\section{Jak Texat--Vzorová otázka} %Název podotázky, přesně tak, jak se to má vytexat
 
 \begin{shrnuti}
-Sazba tohoto se asi ještě dooslí -- Stručné shrnutí otázky
+Pište v \LaTeX u, snažte se nedělat moc chyb v syntaxi, prosím. Soubor s otázkou pojmenovávejte \verb"#.tex", kde zadejte číslo podle tabulky na drivu.
+(Sem patří stručné shrnutí otázky, na jeden dva odstavce maximálně, fakt věci, které když nebudete znát, tak poletíte oknem.)
 \end{shrnuti}
 
-\subsection*{Tady pak skutečně zpracujte otázku}
-\lipsum[1]
-\subsubsection*{Případně podnadpis}
-\lipsum[1]
-\subsection*{Whatever}
-Amen
+\subsection*{Jak na \LaTeX}
+To už snad většina lidí zná, pokud ne, je na internetu mnoho návodů. Zde jen nějaké poznámky:
+
+Odkazujte co se dá -- je to pak klikací!!!
+\begin{equation}
+\label{0_rovnice}
+\int_0^d d \d d = \frac{d^2}{2}
+\end{equation}
+V rovnici \eqref{0_rovnice} je \verb"\label{0_rovnice}", 
+aby odkaz pak byl pomocí \verb"\eqref{0_rovnice}"
+Diferenciál pište pomocí \verb"\d".\footnote{je to makro definované jen v této šabloně, 
+jinde vám to fungovat nebude\dots}
+Dá se odkazovat na obrázky, tabulky, kapitoly a kdovíco ještě. Stačí, když dovnitř dáte 
+\verb"\label{identfikátor}" s jedinečným identifikátorem a pak vás 
+\verb"\ref{identifikátor}" odkáže Používejte identifikátory ve tvaru \verb"#_něco", kam 
+dáte číslo otázky, aby se předešlo kolizím napříč otázkami.
+Speciálně, pokud chcete 
+se odkázat na jinou otázku, použijte \verb"\ref{ot#}", kde zadáte číslo souboru otázky. 
+(Např. \verb"\ref{ot42}" vás odkáže na otázku \ref{ot42}).
+\pojem{Pojem} se zvýrazní pomocí \verb"\pojem{To co chcete zvýraznit}"\footnote{Tady 
+vám snad došlo, že je to další makro. :)} 
+\subsubsection*{Odkazy na zdroje}
+Odkazy na literaturu pomocí bib\TeX u, ještě se bude řešit.
+Odkazy na webově stránky pak pomocí \verb"\url{www.whatever.com}" -- taky je to pak klikací.
 
 \begin{poznamky} %upravený itemize, používat jako itemize
-\item Odkud se dá čerpat z literatury, na co se doptávají klasicky u státnic, na co se dá navázat, s čím to souvisí apod. Takový tipy a triky. viz \ref{ot99}
-\item Tento vzor bude sloužit jako návod k použití, až to dodělám.
+\item Odkud se dá čerpat z literatury, na co se doptávají klasicky u státnic, na co se dá navázat, s čím to souvisí apod. Takový tipy a triky.
+\item Odkaz na rovnici \eqref{0_rovnice} fakt je klikací.
+\item Žádný učený z nebe nespadl, nebojte se zeptat, pokud vám něco nejde, leckdo z ročníku \TeX at umí a rád vám poradí. (třeba já)
+\item Chcete-li si ztexat jen svou otázku, abyste zjistili, jestli nemáte v ní chyby,  stáhněte soubor \verb"ukazka.tex" a v příkazu \verb"\otazka{}" přepište \uv{vzor} na soubor své otázky bez přípony. (v ideálním případě by to mělo být jen číslo) 
+\item Tento vzor bude asi průběžně doplňován.
+\item Výsledek bude vytvářen spíš na Githubu \url{https://github.com/matoumik/bc-statnice}
+\item Bývá dobrým zvykem, zalamovat žádky po cca 80 znacích (cca šířka obrazovky)
 \end{poznamky}
 
 \autori{Mikuláš Matoušek}{většinu definic maker jsem ukradl ze stack overflow}
-% Makro,
-%sází autora v prvním parametru (zase, jak se to napíše, tak se to vytexá, víc autorů % %oddělte čárkami) v druhém parametru je 
-%pak místo pro poznámku autora
+% Makro sází autory v prvním parametru (zase, jak se to napíše, 
+%tak se to vytexá, víc autorů 
+%oddělte čárkami) v druhém parametru je
+%pak místo pro poznámku autora (odkaď to ukradl, cokoliv jej nepadne)

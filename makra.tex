@@ -1,0 +1,15 @@
+\newcommand{\otazka}[1]{%
+\IfFileExists{#1.tex}{\input{#1.tex}}{\section{\rm\it Otázka ještě čeká na zpracování}}
+\label{ot#1}
+}
+\newcommand{\autori}[2]{%
+\hrule\smallskip{\small #1}\\\relax
+{
+\footnotesize\it(#2)}
+}
+\newenvironment{poznamky}{{\centering\subsubsection*{Poznámky}}\begin{itemize}}{\end{itemize}}
+\newenvironment{shrnuti}{{\centering\subsubsection*{Základy}}}{\bigskip\hrule}
+
+\AtBeginDocument{\renewcommand{\d}{\,\mathrm{d}}}
+
+\newcommand{\pojem}[1]{{\bf #1}}
